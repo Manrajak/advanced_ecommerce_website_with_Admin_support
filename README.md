@@ -16,7 +16,7 @@ RESTful APIs: Backend communicates with the frontend via secure REST APIs.
 
 Database Integration: MongoDB used for storing user data, content, and configurations.
 
-State Management: Efficient state handling using React Context API / Redux (mention what you used).
+State Management: Efficient state handling using React Context API / Redux.
 
 Environment Config: .env file support for easy configuration (e.g., API keys, database URI).
 
@@ -32,6 +32,4 @@ Form validation and error handling
 
 Alerts and Toast Notifications
 
-Pagination and Search Functionality (if applicable)
 
-Image/File Uploads (if included)"# advanced_ecommerce_website_with_Admin_support" 
