@@ -30,5 +30,7 @@
 
 4. Form validation and error handling
 
-5. Alerts and Toast Notifications
+Alerts and Toast Notifications
+
+Pagination and Search Functionality (if applicable)
 
