@@ -10,6 +10,7 @@ require('dotenv').config()
 app.use(express.json());
 app.use(cors({
     origin: ['http://localhost:5173', 'https://advanced-ecommerce-website-with-admin-support-haoa.vercel.app/'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
 }))
 
