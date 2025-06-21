@@ -53,7 +53,7 @@ const CheckoutPage = () => {
               navigate("/orders")
         } catch (error) {
             console.error("Error place an order", error);
-            alert("Failed to place an order")
+             alert(error?.data?.message || "Failed to place an order");
         }
     }
 
@@ -64,7 +64,7 @@ const CheckoutPage = () => {
                 <div className="container max-w-screen-lg mx-auto">
                     <div>
                         <div>
-                            <h2 className="font-semibold text-xl text-gray-600 mb-2">Cash On Delevary</h2>
+                            <h2 className="font-semibold text-xl text-gray-600 mb-2">Cash On Delivery</h2>
                             <p className="text-gray-500 mb-2">Total Price: ${totalPrice}</p>
                             <p className="text-gray-500 mb-6">Items: {cartItems.length > 0 ? cartItems.length : 0}</p>
                         </div>
@@ -164,7 +164,7 @@ const CheckoutPage = () => {
                                                     <input
                                                         onChange={(e) => setIsChecked(e.target.checked)}
                                                         type="checkbox" name="billing_same" id="billing_same" className="form-checkbox" />
-                                                    <label htmlFor="billing_same" className="ml-2 ">I am aggree to the <Link className='underline underline-offset-2 text-blue-600'>Terms & Conditions</Link> and <Link className='underline underline-offset-2 text-blue-600'>Shoping Policy.</Link></label>
+<label htmlFor="billing_same" className="ml-2 ">I agree to the <Link className='underline underline-offset-2 text-blue-600'>Terms & Conditions</Link> and <Link className='underline underline-offset-2 text-blue-600'>Shopping Policy.</Link></label>
                                                 </div>
                                             </div>
 
@@ -173,6 +173,7 @@ const CheckoutPage = () => {
                                             <div className="md:col-span-5 text-right">
                                                 <div className="inline-flex items-end">
                                                     <button
+                                                        type ="submit"
                                                         disabled={!isChecked}
                                                         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Place an Order</button>
                                                 </div>
