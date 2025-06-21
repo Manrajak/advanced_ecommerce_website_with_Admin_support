@@ -10,21 +10,11 @@ require('dotenv').config()
 // middleware
 app.use(express.json());
 
-// app.use(cors({
-//     origin: ['http://localhost:5173', 
-//       'https://advanced-ecommerce-website-with-admin-support-haoa.vercel.app',
-//         'https://advanced-ecommerce-website-with-a-git-5baac4-mannrajaks-projects.vercel.app'
-//       ],
-
-//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-//     credentials: true,
-//       optionsSuccessStatus: 200
-// }))
 
 const allowedOrigins = [
   'http://localhost:5173',
   'https://advanced-ecommerce-website-with-admin-support-haoa.vercel.app',
-  'https://advanced-ecommerce-website-with-a-git-5baac4-mannrajaks-projects.vercel.app'
+  'https://advanced-ecommerce-website-with-a-git-5baac4-manrajaks-projects.vercel.app'
 ];
 
 app.use(cors({
@@ -41,41 +31,6 @@ app.use(cors({
 }));
 
 
-
-
-
-
-
-
-
-
-
-// app.use((req, res, next) => {
-
-//   // res.header("Access-Control-Allow-Origin", "https://advanced-ecommerce-website-with-admin-support-haoa.vercel.app");
-//   res.header("Access-Control-Allow-Origin", req.headers.origin); // Dynamically allow any of your allowed origins
-
-//   res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-//   res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-//   res.header("Access-Control-Allow-Credentials", "true");
-//   next();
-// });
-
-
-app.use((req, res, next) => {
-  const allowedOrigins = [
-    'http://localhost:5173',
-    'https://advanced-ecommerce-website-with-admin-support-haoa.vercel.app',
-    'https://advanced-ecommerce-website-with-a-git-5baac4-mannrajaks-projects.vercel.app'
-  ];
-  if (allowedOrigins.includes(req.headers.origin)) {
-    res.header("Access-Control-Allow-Origin", req.headers.origin);
-  }
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  res.header("Access-Control-Allow-Credentials", "true");
-  next();
-});
 
 
 // routes
