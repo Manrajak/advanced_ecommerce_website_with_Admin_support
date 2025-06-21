@@ -2,7 +2,11 @@
 
 .navbar{
    background-color: rgb(17, 24, 39);
-   /* color: white; */
+   color: white;
+}
+
+.bgc{
+   color: black;
 }
 .swiper {
     width: 100%;

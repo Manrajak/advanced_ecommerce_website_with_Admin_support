@@ -78,7 +78,7 @@ const DashboardLayout = () => {
               <span className="text-sm text-gray-600">Student</span>
             </div>
             <span className="h-12 w-12 ml-2 sm:ml-3 mr-2 bg-gray-100 rounded-full overflow-hidden">
-              <img src="..\public\AVI00030.jpg" alt="user profile photo" className="h-full w-full object-cover"/>
+              <img src="AVI00030.jpg" alt="user profile photo" className="h-full w-full object-cover"/>
             </span>
 
 

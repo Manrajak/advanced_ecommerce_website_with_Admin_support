@@ -43,7 +43,7 @@ const Navbar = () => {
                         <IoSearchOutline className="absolute inline-block left-3 inset-y-2" />
 
                         <input type="text" placeholder="Search here"
-                            className="bg-[#EAEAEA] w-full py-1 md:px-8 px-6 rounded-md focus:outline-none"
+                            className="bg-[#EAEAEA] w-full py-1 md:px-8 px-6 bgc rounded-md focus:outline-none"
                         />
                     </div>
                 </div>
@@ -60,7 +60,7 @@ const Navbar = () => {
                             {/* show dropdowns */}
                             {
                                 isDropdownOpen && (
-                                    <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-md z-40">
+                                    <div className="absolute bgc right-0 mt-2 w-48 bg-white shadow-lg rounded-md z-40">
                                         <ul className="py-2">
                                             {
                                                 navigation.map((item) => (
