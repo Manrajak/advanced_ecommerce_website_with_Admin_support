@@ -9,16 +9,46 @@ require('dotenv').config()
 
 // middleware
 app.use(express.json());
-app.use(cors({
-    origin: ['http://localhost:5173', 
-      'https://advanced-ecommerce-website-with-admin-support-haoa.vercel.app',
-        'https://advanced-ecommerce-website-with-a-git-5baac4-mannrajaks-projects.vercel.app'
-      ],
 
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true,
-      optionsSuccessStatus: 200
-}))
+// app.use(cors({
+//     origin: ['http://localhost:5173', 
+//       'https://advanced-ecommerce-website-with-admin-support-haoa.vercel.app',
+//         'https://advanced-ecommerce-website-with-a-git-5baac4-mannrajaks-projects.vercel.app'
+//       ],
+
+//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+//     credentials: true,
+//       optionsSuccessStatus: 200
+// }))
+
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://advanced-ecommerce-website-with-admin-support-haoa.vercel.app',
+  'https://advanced-ecommerce-website-with-a-git-5baac4-mannrajaks-projects.vercel.app'
+];
+
+app.use(cors({
+  origin: function(origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
+  optionsSuccessStatus: 200
+}));
+
+
+
+
+
+
+
+
+
+
 
 // app.use((req, res, next) => {
 
@@ -46,7 +76,6 @@ app.use((req, res, next) => {
   res.header("Access-Control-Allow-Credentials", "true");
   next();
 });
-
 
 
 // routes
